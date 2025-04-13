@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS creature_artefact(
 	creature_artefact_id	SERIAL		PRIMARY KEY,
 	creature_id				INTEGER		NOT NULL,
 	artefact_id				INTEGER		NOT NULL,
-	artefact_role			VARCHAR(25)	CHECK (artefact_role IN ('Created', 'Created by', 'Summoned', 'Owned by', 'Bound to', 'Worshipped by', 'Other')),
+	artefact_role			VARCHAR(25)	CHECK (artefact_role IN ('Created', 'Created by', 'Summoned', 'Owned by', 'Bound to', 'Worshipped by', 'Mentioned', 'Other')),
 
 	FOREIGN KEY (creature_id) REFERENCES creatures(creature_id) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (artefact_id) REFERENCES artefacts(artefact_id) ON DELETE CASCADE ON UPDATE CASCADE
