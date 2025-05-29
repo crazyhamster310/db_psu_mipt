@@ -13,6 +13,7 @@ BEGIN
         SET book_count = book_count - 1
         WHERE author_id = OLD.author_id;
     END IF;
+	RETURN NULL;
 END;
 $$ LANGUAGE plpgsql;
 
